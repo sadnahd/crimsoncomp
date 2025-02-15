@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+
+// Puts generated code in counter folder
+package counter;
+
+// Tells where to put generated code
+option go_package = "/proto;counter";
+
+// Available Actions
+service Counter {
+  rpc Increment (IncrementRequest) returns (IncrementResponse);
+}
+
+// Empty request since we just need to increment
+message IncrementRequest {}
+
+// Response with the updated counter value
+message IncrementResponse {
+  int64 value = 1;
+}
