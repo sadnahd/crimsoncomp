@@ -57,12 +57,12 @@ func startHTTPServer() {
 
 	// Set up CORS
 	c := cors.New(cors.Options{
-		AllowedOrigins: []string{"http://localhost:5173"}, // Allow only the frontend's origin
-		AllowedMethods: []string{"GET", "POST"},           // Allow GET and POST methods
-		AllowedHeaders: []string{"Content-Type"},          // Allow Content-Type header
+		AllowedOrigins: []string{"http://localhost:5173"}, 
+		AllowedMethods: []string{"GET", "POST"},          
+		AllowedHeaders: []string{"Content-Type"},         
 	})
 
-	handler := c.Handler(mux) // Wrap mux with CORS handler
+	handler := c.Handler(mux) 
 
 	fmt.Println("HTTP Server running on port 8080...")
 	log.Fatal(http.ListenAndServe(":8080", handler))
